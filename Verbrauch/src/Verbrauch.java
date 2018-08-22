@@ -28,7 +28,7 @@ public class Verbrauch {
         double tanken = w / 100 * verbrauch;
         double tankens = tanken / g;
         double whtanken= tankens + 1;
-        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        DecimalFormat decimalFormat = new DecimalFormat("#");
         String erste = decimalFormat.format(verbrauch);
         String zweite = decimalFormat.format(kosten);
         String dritte = decimalFormat.format(tanken);
@@ -36,7 +36,7 @@ public class Verbrauch {
         String sechste = decimalFormat.format(whtanken);
 
         System.out.println("Ihrer Verbrauch ist : " + erste + " Liter");
-        System.out.println("Tanken hat " + zweite + " € gekostet");
+        System.out.println("Tanken hat " + zweite + "€ gekostet");
         System.out.println("Sie muessen " + dritte + " Liter tanken damit Sie " + w + "km fahren koennen");
         System.out.println("Die Strecke kostet " + vierte + "€");
         System.out.println("Sie muessen "+ sechste + " mal tanken");
