@@ -53,12 +53,10 @@ public class AutoGenerator {
 		} else {
 			try {
 
-				File file = new File(dir.getAbsolutePath().concat("/" + UUID.randomUUID()));
+				File file = new File(dir.getAbsolutePath().concat("/" + UUID.randomUUID()).concat(".txt"));
 				PrintWriter pw = new PrintWriter(new FileOutputStream(file));
 
-				PrintWriter writer = new PrintWriter("Auto.txt");
-
-				writer.println("Sie bekommen ein : " + Auto[randa]);
+				pw.println("Sie bekommen ein : " + Auto[randa]);
 
 				if (Auto[randa] == "Volkswagen") {
 					String autom = AutoVW[randvw];
@@ -75,23 +73,23 @@ public class AutoGenerator {
 					System.out.println("Modelle: " + autom);
 				}
 
-				writer.println("Mit dem Motor : " + Motor[randm]);
-				writer.println("Farbe ist " + Farbe[randf]);
-				writer.println("Erstzulassung : " + mdz + "." + Zulassung[randz]);
-				writer.println("Mit Hubraum : " + Hubraum[randh]);
-				writer.println("Als " + Variant[randv]);
+				pw.println("Mit dem Motor : " + Motor[randm]);
+				pw.println("Farbe ist " + Farbe[randf]);
+				pw.println("Erstzulassung : " + mdz + "." + Zulassung[randz]);
+				pw.println("Mit Hubraum : " + Hubraum[randh]);
+				pw.println("Als " + Variant[randv]);
 
 				if (Zulassung[randz] == "2018") {
 					kms = kkms;
 				}
 
-				writer.println("Das Auto hat " + kms + " KM");
+				pw.println("Das Auto hat " + kms + " KM");
 
 				if (tks < 20) {
 					tks = 15;
 				}
-				writer.println("Das Auto hat " + tks + "L im Tank");
-				writer.close();
+				pw.println("Das Auto hat " + tks + "L im Tank");
+				pw.close();
 				pw.close();
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
