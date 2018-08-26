@@ -1,13 +1,22 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
+
+
 
 public class AutoGenerator {
      public static void main(String [] args){
-        String [] Auto ={"Volkswagen", "Opel", "Toyota", "Opel"};
+        String [] Auto ={"Volkswagen", "Opel", "Toyota"};
         String [] Motor ={"Diesel", "Benzin", "Hybrid"};
         String [] Hubraum={"2.0L", "1,6L", "1,4L", "1,8L"};
         String [] Variant={"Kombi", "Limousine"};
         String [] Farbe= {"Rot", "Weiß", "Schwarz", "Gelb"};
         String [] Zulassung= {"2016","2017","2018", "2015" };
+        String [] AutoVW = {"Golf", "Passat", "Polo"};
+        String [] AutoO = {"Corsa", "Astra", "Insignia" };
+        String [] AutoT = {"Auris", "Yaris", "Corolla"};
 
         int lenghta = Auto.length;
         int lenghtm = Motor.length;
@@ -15,11 +24,16 @@ public class AutoGenerator {
         int lenghtv = Variant.length;
         int lenghtf = Farbe.length;
         int lenghtz = Zulassung.length;
+        int lenghtvw = AutoVW.length;
+        int lenghto = AutoO.length;
+        int lenghtt= AutoT.length;
 
          Random rand = new Random();
          int kms = rand.nextInt(15000)+1;
          int tks = rand.nextInt(50)+1;
          int mdz = rand.nextInt(12)+1;
+         int kkms = rand.nextInt(10000)+1;
+         int kmdz = rand.nextInt(8)+1;
 
         int randa = (int) (Math.random()*lenghta);
         int randm = (int) (Math.random()*lenghtm);
@@ -27,20 +41,62 @@ public class AutoGenerator {
         int randv = (int) (Math.random()*lenghtv);
         int randf = (int) (Math.random()*lenghtf);
         int randz = (int) (Math.random()*lenghtz);
+        int randvw = (int) (Math.random()*lenghtvw);
+        int rando = (int) (Math.random()*lenghto);
+        int randt = (int) (Math.random()*lenghtt);
 
+         File file = new File("F:/JAVA/autoGenerator/");
+         try {
+             file.mkdirs();
+             file.createNewFile();
+         } catch (IOException e1) {
+             e1.printStackTrace();
+         }
+         try {
+             PrintWriter pw = new PrintWriter(file);
 
-        System.out.println("Sie bekommen ein : " + Auto[randa]);
-        System.out.println("Mit dem Motor : " + Motor[randm]);
-        System.out.println("Farbe ist "+ Farbe[randf]);
-        System.out.println("Erstzulassung : " + mdz +"."+Zulassung[randz]);
-        System.out.println("Mit Hubraum : " + Hubraum[randh]);
-        System.out.println("Als " + Variant[randv]);
-        System.out.println("Das Auto hat " + kms + " KM");
+         PrintWriter writer = new PrintWriter("Auto.txt");
+
+        writer.println("Sie bekommen ein : " + Auto[randa]);
+
+         if (Auto[randa] == "Volkswagen"){
+             String autom = AutoVW[randvw];
+             System.out.println("Modelle : " + autom);
+         }
+
+         else if (Auto[randa]== "Opel" ){
+             String autom = AutoO[rando];
+             System.out.println("Modelle : " + autom);
+         }
+
+         else if (Auto[randa] == "Toyota"){
+             String autom = AutoT[randt];
+             System.out.println("Modelle: " + autom);
+         }
+
+        writer.println("Mit dem Motor : " + Motor[randm]);
+        writer.println("Farbe ist "+ Farbe[randf]);
+        writer.println("Erstzulassung : " + mdz +"."+Zulassung[randz]);
+        writer.println("Mit Hubraum : " + Hubraum[randh]);
+        writer.println("Als " + Variant[randv]);
+
+        if (Zulassung[randz] == "2018" ){
+            kms = kkms;
+        }
+
+         writer.println("Das Auto hat " + kms + " KM");
 
         if (tks < 20 ) {
             tks = 15;
         }
-         System.out.println("Das Auto hat "+tks+ "L im Tank");
+         writer.println("Das Auto hat "+tks+ "L im Tank");
 
-    }
+        pw.close();
+
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
+
+
+     }
 }
