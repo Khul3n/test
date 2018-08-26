@@ -11,7 +11,7 @@ public class AutoGenerator {
 		String[] Hubraum = { "2.0L", "1,6L", "1,4L", "1,8L" };
 		String[] Variant = { "Kombi", "Limousine" };
 		String[] Farbe = { "Rot", "Weiß", "Schwarz", "Gelb" };
-		String[] Zulassung = { "2016", "2017", "2018", "2015" };
+		String[] Zulassung = {"2015","2016", "2017", "2018"};
 		String[] AutoVW = { "Golf", "Passat", "Polo" };
 		String[] AutoO = { "Corsa", "Astra", "Insignia" };
 		String[] AutoT = { "Auris", "Yaris", "Corolla" };
@@ -50,7 +50,7 @@ public class AutoGenerator {
 		} else {
 			try {
 
-				File file = new File(dir.getAbsolutePath().concat("/" +("Auto.txt")));
+				File file = new File(dir.getAbsolutePath().concat("/" + Auto[randa] +(".txt")));
 				PrintWriter pw = new PrintWriter(new FileOutputStream(file));
 
 
@@ -78,8 +78,12 @@ public class AutoGenerator {
 				if (Zulassung[randz].equals("2018")) {
 					kms = kkms;
 				}
-				pw.println("Erstzulassung : " + mdz + "." + Zulassung[randz]);
-
+				if (mdz < 10) {
+					pw.println("Erstzulassung : 0" + mdz + "." + Zulassung[randz]);
+				}
+				else {
+					pw.println("Erstzulassung : " + mdz + "." + Zulassung[randz]);
+				}
 				pw.println("Das Auto hat " + kms + " KM");
 				;
 
