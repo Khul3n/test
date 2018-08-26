@@ -53,24 +53,25 @@ public class AutoGenerator {
 				File file = new File(dir.getAbsolutePath().concat("/" +("Auto.txt")));
 				PrintWriter pw = new PrintWriter(new FileOutputStream(file));
 
-				pw.println("Sie bekommen ein : " + Auto[randa]);
+
 
 				if (Auto[randa] == "Volkswagen") {
 					String autom = AutoVW[randvw];
-					pw.println("Modelle : " + autom);
+					pw.println("Sie bekommen ein : " + Auto[randa] + " " + autom + " " + Variant[randv]);
 				}
 
 				else if (Auto[randa] == "Opel") {
 					String autom = AutoO[rando];
-					pw.println("Modelle : " + autom);
+					pw.println("Sie bekommen ein : " + Auto[randa] + " " + autom + " " + Variant[randv]);
 				}
 
 				else if (Auto[randa] == "Toyota") {
 					String autom = AutoT[randt];
-					pw.println("Modelle: " + autom);
+					pw.println("Sie bekommen ein : " + Auto[randa] + " " + autom + " " + Variant[randv]);
 				}
 
 				pw.println("Mit dem Motor : " + Motor[randm]);
+				pw.println("Mit Hubraum : " + Hubraum[randh]);
 				pw.println("Farbe ist " + Farbe[randf]);
 
 
@@ -78,8 +79,7 @@ public class AutoGenerator {
 					kms = kkms;
 				}
 				pw.println("Erstzulassung : " + mdz + "." + Zulassung[randz]);
-				pw.println("Mit Hubraum : " + Hubraum[randh]);
-				pw.println("Als " + Variant[randv]);
+
 				pw.println("Das Auto hat " + kms + " KM");
 				;
 
