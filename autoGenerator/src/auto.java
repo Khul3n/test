@@ -1,65 +1,104 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Auto {
+	private	String auto = null;
+	private	String motor =  null;
+	private	String hubraum =  null;
+	private	String variant =  null;
+	private	String farbe =  null;
+	private	String zulassung =  null;
+	private	String VW = null;
+	private	String oO =  null;
+	private	String T =  null;
 
-    public List<AutoGenerator> getAutoGenerator() {
-        List<AutoGenerator> Autos = new ArrayList();
+	public String getAuto() {return auto;}
+	public void setAuto(String auto){
+		this.auto = auto;
+	}
 
-        AutoGenerator a1 = new AutoGenerator();
-        a1.setAuto("Volkswagen");
-        a1.setAutoVW("Golf");
-        a1.setFarbe("Schwarz");
-        a1.setMotor("TDI");
-        a1.setHubraum("2.0L");
-        a1.setVariant("Kombi");
-        a1.setZulassung("06.2018");
-        Autos.add(a1);
+	public String getoO() {
+		return oO;
+	}
+	public void setoO(String autoO){
+		this.oO = autoO;
+	}
 
-        AutoGenerator a2 = new AutoGenerator();
-        a2.setAuto("Opel");
-        a2.setAutoO("Corsa");
-        a2.setFarbe("Gelb");
-        a2.setMotor("Benzin");
-        a2.setHubraum("1,4L");
-        a2.setVariant("Limousine");
-        a2.setAuto("03.2009");
-        Autos.add(a2);
+	public String getT() {
+		return T;
+	}
+	public void setT(String autoT){
+		this.T = autoT;
+	}
 
-        AutoGenerator a3 = new AutoGenerator();
 
-        a3.setAuto("Toyota");
-        a3.setAutoT("Auris");
-        a3.setFarbe("Weiß");
-        a3.setMotor("Hybrid");
-        a3.setHubraum("1,8L");
-        a3.setVariant("Kombi");
-        a3.setZulassung("08.2017");
-        Autos.add(a3);
+	public String getVW() {
+		return VW;
+	}
+	public void setVW(String autoVW){
+		this.VW = autoVW;
+	}
 
-        return Autos;
-    }
+	public String getFarbe() {
+		return farbe;
+	}
+	public void setFarbe(String farbe){
+		this.farbe = farbe;
+	}
 
-    public void printData(){
-            List<AutoGenerator> autos = getAutoGenerator();
+	public String getHubraum() {
+		return hubraum;
+	}
+	public void setHubraum(String hubraum){
+		this.hubraum = hubraum;
+	}
 
-            for(AutoGenerator a : autos)
-                System.out.println(a.getAuto());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getAutoO());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getAutoT());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getAutoVW());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getFarbe());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getMotor());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getZulassung());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getVariant());
-            for(AutoGenerator a : autos)
-                System.out.println(a.getHubraum());
-    }
+	public String getMotor() {
+		return motor;
+	}
+	public void setMotor(String motor){
+		this.motor =  motor;
+	}
+
+	public String getVariant() {
+		return variant;
+	}
+	public void setVariant(String variant){
+		this.variant =  variant;
+	}
+
+	public String getZulassung() {
+		return zulassung;
+	}
+	public void setZulassung(String zulassung){
+		this.zulassung = zulassung;
+	}
+
+	public static void main(String[] args){
+		AutoGenerator generator= new AutoGenerator();
+		List<Auto> autos = generator.getAutoGenerator();
+
+		for(Auto a : autos)
+			System.out.println(a.getAuto());
+		for(Auto a : autos)
+			System.out.println(a.getoO());
+		for(Auto a : autos)
+			System.out.println(a.getVW());
+		for(Auto a : autos)
+		    System.out.println(a.getT());
+		for (Auto a : autos)
+			System.out.println(a.getFarbe());
+		for(Auto a : autos)
+			System.out.println(a.getMotor());
+		for(Auto a : autos)
+			System.out.println(a.getZulassung());
+		for(Auto a : autos)
+			System.out.println(a.getVariant());
+		for(Auto a : autos)
+			System.out.println(a.getHubraum());
+	}
+
 }
+
+
+
+

@@ -1,80 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class AutoGenerator {
-	private	String auto = null;
-	private	String motor =  null;
-	private	String hubraum =  null;
-	private	String variant =  null;
-	private	String farbe =  null;
-	private	String zulassung =  null;
-	private	String autoVW = null;
-	private	String autoO =  null;
-	private	String autoT =  null;
 
-	public String getAuto() {
-		return auto;
-	}
-	public void setAuto(String auto){
-		this.auto = auto;
-	}
+    public List<Auto> getAutoGenerator() {
+        List<Auto> Autos = new ArrayList();
 
-	public String getAutoO() {
-		return autoO;
-	}
-	public void setAutoO(String autoO){
-		this.autoO = autoO;
-	}
+        Auto a1 = new Auto();
+        a1.setAuto("Volkswagen");
+        a1.setVW("Golf");
+        a1.setoO("Corsa");
+        a1.setT("Auris");
+        a1.setFarbe("Schwarz");
+        a1.setMotor("TDI");
+        a1.setHubraum("2.0L");
+        a1.setVariant("Kombi");
+        a1.setZulassung("06.2018");
+        Autos.add(a1);
 
-	public String getAutoT() {
-		return autoT;
-	}
-	public void setAutoT(String autoT){
-		this.autoT = autoT;
-	}
+        Auto a2 = new Auto();
+        a2.setAuto("Opel");
+        a2.setFarbe("Gelb");
+        a2.setMotor("Benzin");
+        a2.setHubraum("1,4L");
+        a2.setVariant("Limousine");
+        a2.setZulassung("03.2009");
+        Autos.add(a2);
+
+        Auto a3 = new Auto();
+
+        a3.setAuto("Toyota");
+        a3.setFarbe("Weiß");
+        a3.setMotor("Hybrid");
+        a3.setHubraum("1,8L");
+        a3.setVariant("Kombi");
+        a3.setZulassung("08.2017");
+        Autos.add(a3);
+
+        return Autos;
+    }
 
 
-	public String getAutoVW() {
-		return autoVW;
-	}
-	public void setAutoVW(String autoVW){
-		this.autoVW = autoVW;
-	}
-
-	public String getFarbe() {
-		return farbe;
-	}
-	public void setFarbe(String farbe){
-		this.farbe = farbe;
-	}
-
-	public String getHubraum() {
-		return hubraum;
-	}
-	public void setHubraum(String hubraum){
-		this.hubraum = hubraum;
-	}
-
-	public String getMotor() {
-		return motor;
-	}
-	public void setMotor(String motor){
-		this.motor =  motor;
-	}
-
-	public String getVariant() {
-		return variant;
-	}
-	public void setVariant(String variant){
-		this.variant =  variant;
-	}
-
-	public String getZulassung() {
-		return zulassung;
-	}
-	public void setZulassung(String zulassung){
-		this.zulassung = zulassung;
-	}
-	public static void main(String [] args){}
 }
-
-
-
-
