@@ -1,87 +1,65 @@
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
-public class auto {
+public class Auto {
 
-    public static void main (String[] args){
+    public List<AutoGenerator> getAutoGenerator() {
+        List<AutoGenerator> Autos = new ArrayList();
 
-        AutoGenerator variable = new AutoGenerator();
+        AutoGenerator a1 = new AutoGenerator();
+        a1.setAuto("Volkswagen");
+        a1.setAutoVW("Golf");
+        a1.setFarbe("Schwarz");
+        a1.setMotor("TDI");
+        a1.setHubraum("2.0L");
+        a1.setVariant("Kombi");
+        a1.setZulassung("06.2018");
+        Autos.add(a1);
 
-        int lenghta = variable.getAuto().length;
-        int lenghtm = variable.getMotor().length;
-        int lenghth = variable.getHubraum().length;
-        int lenghtv = variable.getVariant().length;
-        int lenghtf = variable.getFarbe().length;
-        int lenghtz = variable.getZulassung().length;
-        int lenghtvw = variable.getAutoVW().length;
-        int lenghto = variable.getAutoO().length;
-        int lenghtt = variable.getAutoT().length;
+        AutoGenerator a2 = new AutoGenerator();
+        a2.setAuto("Opel");
+        a2.setAutoO("Corsa");
+        a2.setFarbe("Gelb");
+        a2.setMotor("Benzin");
+        a2.setHubraum("1,4L");
+        a2.setVariant("Limousine");
+        a2.setAuto("03.2009");
+        Autos.add(a2);
 
+        AutoGenerator a3 = new AutoGenerator();
 
+        a3.setAuto("Toyota");
+        a3.setAutoT("Auris");
+        a3.setFarbe("Weiß");
+        a3.setMotor("Hybrid");
+        a3.setHubraum("1,8L");
+        a3.setVariant("Kombi");
+        a3.setZulassung("08.2017");
+        Autos.add(a3);
 
-        Random rand = new Random();
-        int kms = rand.nextInt(150000) + 1;
-        int tks = rand.nextInt(50) + 1;
-        int mdz = rand.nextInt(12) + 1;
-        int kkms = rand.nextInt(10000) + 1;
+        return Autos;
+    }
 
+    public void printData(){
+            List<AutoGenerator> autos = getAutoGenerator();
 
-        int randa = (int) (Math.random() * lenghta);
-        int randm = (int) (Math.random() * lenghtm);
-        int randh = (int) (Math.random() * lenghth);
-        int randv = (int) (Math.random() * lenghtv);
-        int randf = (int) (Math.random() * lenghtf);
-        int randz = (int) (Math.random() * lenghtz);
-        int randvw = (int) (Math.random() * lenghtvw);
-        int rando = (int) (Math.random() * lenghto);
-        int randt = (int) (Math.random() * lenghtt);
-
-        /*File dir = new File("C:/tmp/");
-
-        if (!dir.exists()) {
-            dir.mkdirs();
-        } else {
-            try {
-
-                File file = new File(dir.getAbsolutePath().concat("/" + variable.getAuto()[randa] + (".txt")));
-                PrintWriter pw = new PrintWriter(new FileOutputStream(file));*/
-
-
-                if (variable.getAuto()[randa] == "Volkswagen") {
-                    String autom = variable.getAutoVW()[randvw];
-                    System.out.println("Sie bekommen ein : " + variable.getAuto()[randa] + " " + autom + " " + variable.getVariant()[randv]);
-                } else if (variable.getAuto()[randa] == "Opel") {
-                    String autom = variable.getAutoO()[rando];
-                    System.out.println("Sie bekommen ein : " + variable.getAuto()[randa] + " " + autom + " " + variable.getVariant()[randv]);
-                } else if (variable.getAuto()[randa] == "Toyota") {
-                    String autom = variable.getAutoT() [randt];
-                    System.out.println("Sie bekommen ein : " + variable.getAuto()[randa] + " " + autom + " " + variable.getVariant()[randv]);
-                }
-
-                System.out.println("Mit dem Motor : " + variable.getMotor()[randm]);
-                System.out.println("Mit Hubraum : " + variable.getHubraum()[randh]);
-                System.out.println("Farbe: " + variable.getFarbe()[randf]);
-
-
-                if (variable.getZulassung()[randz].equals("2018")) {
-                    kms = kkms;
-                }
-                if (mdz < 10) {
-                    System.out.println("Erstzulassung : 0" + mdz + "." + variable.getZulassung()[randz]);
-                } else {
-                    System.out.println("Erstzulassung : " + mdz + "." + variable.getZulassung()[randz]);
-                }
-                     System.out.println("Das Auto hat " + kms + " KM");
-
-                if (tks < 20) {
-                    tks = 15;
-                }
-                    System.out.println("Das Auto hat " + tks + "L im Tank");
-
-                /*pw.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();*/
-
-
-
+            for(AutoGenerator a : autos)
+                System.out.println(a.getAuto());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getAutoO());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getAutoT());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getAutoVW());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getFarbe());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getMotor());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getZulassung());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getVariant());
+            for(AutoGenerator a : autos)
+                System.out.println(a.getHubraum());
     }
 }

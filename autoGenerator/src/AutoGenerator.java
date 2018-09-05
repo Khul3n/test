@@ -1,50 +1,78 @@
-class AutoGenerator {
+public class AutoGenerator {
+	private	String auto = null;
+	private	String motor =  null;
+	private	String hubraum =  null;
+	private	String variant =  null;
+	private	String farbe =  null;
+	private	String zulassung =  null;
+	private	String autoVW = null;
+	private	String autoO =  null;
+	private	String autoT =  null;
 
-public static void main(String[] args){}
-
-	private	String[] Auto = {"Volkswagen", "Opel", "Toyota"};
-	private	String[] Motor = {"Diesel", "Benzin", "Hybrid"};
-	private	String[] Hubraum = {"2.0L", "1,6L", "1,4L", "1,8L"};
-	private	String[] Variant = {"Kombi", "Limousine"};
-	private	String[] Farbe = {"Rot", "Weiß", "Schwarz", "Gelb"};
-	private	String[] Zulassung = {"2015", "2016", "2017", "2018"};
-	private	String[] AutoVW = {"Golf", "Passat", "Polo"};
-	private	String[] AutoO = {"Corsa", "Astra", "Insignia"};
-	private	String[] AutoT = {"Auris", "Yaris", "Corolla"};
-
-	public String[] getAuto() {return Auto;}
-
-	public String[] getAutoO() {
-		return AutoO;
+	public String getAuto() {
+		return auto;
+	}
+	public void setAuto(String auto){
+		this.auto = auto;
 	}
 
-	public String[] getAutoT() {
-		return AutoT;
+	public String getAutoO() {
+		return autoO;
+	}
+	public void setAutoO(String autoO){
+		this.autoO = autoO;
 	}
 
-	public String[] getAutoVW() {
-		return AutoVW;
+	public String getAutoT() {
+		return autoT;
+	}
+	public void setAutoT(String autoT){
+		this.autoT = autoT;
 	}
 
-	public String[] getFarbe() {
-		return Farbe;
+
+	public String getAutoVW() {
+		return autoVW;
+	}
+	public void setAutoVW(String autoVW){
+		this.autoVW = autoVW;
 	}
 
-	public String[] getHubraum() {
-		return Hubraum;
+	public String getFarbe() {
+		return farbe;
+	}
+	public void setFarbe(String farbe){
+		this.farbe = farbe;
 	}
 
-	public String[] getMotor() {
-		return Motor;
+	public String getHubraum() {
+		return hubraum;
+	}
+	public void setHubraum(String hubraum){
+		this.hubraum = hubraum;
 	}
 
-	public String[] getVariant() {
-		return Variant;
+	public String getMotor() {
+		return motor;
+	}
+	public void setMotor(String motor){
+		this.motor =  motor;
 	}
 
-	public String[] getZulassung() {
-		return Zulassung;
+	public String getVariant() {
+		return variant;
 	}
+	public void setVariant(String variant){
+		this.variant =  variant;
+	}
+
+	public String getZulassung() {
+		return zulassung;
+	}
+	public void setZulassung(String zulassung){
+		this.zulassung = zulassung;
+	}
+	public static void main(String [] args){}
 }
 
 
